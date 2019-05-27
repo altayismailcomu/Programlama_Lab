@@ -46,7 +46,6 @@ def my_convert_gray_to_bw(im_1):
             my_new_image[row,col] = my_norm_1(im_1[row,col,:])
     return my_new_image
 
-
 file_name = "bird.jpg"
 im_1 = plt.imread(file_name)
 im_2 = my_rot(im_1)
