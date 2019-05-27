@@ -1,4 +1,5 @@
 import random
+# insertion bubble ve shell karşılaştırılması
 
 def randomCreation(n):
     dizi = []
@@ -134,3 +135,28 @@ result_bubble = get_mean_of_swap_in_bubble(10,1000)
 
 print("Insertion =",result_insertion)
 print("Bubble =",result_bubble)
+
+#13. Hafta Kodları:
+def shellSort(arr):
+    n = len(arr)
+    gap = n//2  #tamsayı olarak alması için // kullanılıyor
+    karsilastirmaSayisi = 0
+    swapSayisi = 0
+    while(gap > 0):
+        for i in range(gap,n):
+            karsilastirmaSayisi += 1
+            temp = arr[i]
+            j = i
+            while (j >= gap and arr[j-gap] > temp):
+                karsilastirmaSayisi += 1
+                swapSayisi += 1
+                arr[j] = arr[j-gap]
+                j -= gap
+            arr[j] = temp
+        gap //= 2
+    return arr,karsilastirmaSayisi,swapSayisi
+
+arr=randomCreation(100)
+print(shellSort(arr))
+print(insertionSort(arr))
+print(bubbleSort(arr))
