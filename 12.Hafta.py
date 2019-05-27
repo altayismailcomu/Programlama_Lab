@@ -1,5 +1,4 @@
 import random
-# insertion bubble ve shell karşılaştırılması
 
 def randomCreation(n):
     dizi = []
